@@ -1,0 +1,48 @@
+Karan - Web Developer CV
+
+Location: Lahore, Pakistan
+Email: karan@email.com
+GitHub: https://github.com/karan00006
+Featured App: https://nottynotes.lovable.app/
+
+Profile
+Web developer focused on responsive, user-centered web products and modern frontend systems.
+
+Core Skills
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Node.js
+- PHP
+- WordPress
+- REST APIs
+- MongoDB
+- MySQL
+
+Featured Projects
+1. Buraq Travel
+   https://buraqtravel.co.uk
+   Built a travel website with booking-focused UX and modern presentation.
+
+2. Notty Notes (Lovable)
+   https://nottynotes.lovable.app/
+   Built a clean productivity experience with product-focused interaction design.
+
+3. GitHub Portfolio
+   https://github.com/karan00006
+   Collection of web projects and development experiments.
+
+Experience
+Web Developer at Seabricks (Pakistan)
+- Developed responsive UI for client websites.
+- Built dynamic web applications and integrated APIs.
+- Customized CMS and improved performance in existing codebases.
+
+Education
+BS Information Technology
+Punjab University College of Information Technology (PUCIT)
+
+Languages
+- Urdu (Native)
+- English (Professional)

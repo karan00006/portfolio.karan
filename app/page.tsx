@@ -1,226 +1,247 @@
+import Link from "next/link";
+import PageShell from "@/app/components/page-shell";
+import ReviewsSwiper from "@/app/components/reviews-swiper";
+import AnimatedFeatureGrid from "@/app/components/animated-feature-grid";
+import FaqAccordion from "@/app/components/faq-accordion";
+import { contactLinks, featuredProjects, skills, stats } from "@/app/lib/site-data";
+
+const features = [
+  {
+    title: "Full Stack Delivery",
+    detail:
+      "From landing pages to connected backend flows, I build complete implementations that are clean and production ready.",
+  },
+  {
+    title: "Design System Thinking",
+    detail:
+      "Reusable sections and UI tokens help scale faster while keeping visual consistency across all pages and products.",
+  },
+  {
+    title: "Performance Focus",
+    detail:
+      "Page speed, efficient rendering, and practical optimizations are part of the workflow from the first iteration.",
+  },
+  {
+    title: "Reliable Collaboration",
+    detail:
+      "Clear communication, predictable delivery, and transparent progress updates at each milestone.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What type of projects do you usually work on?",
+    answer:
+      "Business websites, personal brands, travel agency platforms, and frontend-heavy product interfaces where quality UI and speed both matter.",
+  },
+  {
+    question: "Can you redesign an existing website instead of building from scratch?",
+    answer:
+      "Yes. I can keep your content and improve layout quality, visual hierarchy, responsiveness, and interaction behavior without unnecessary rebuilds.",
+  },
+  {
+    question: "Do you support ongoing updates after launch?",
+    answer:
+      "Yes. I provide post-launch support for feature updates, bug fixes, optimization work, and iterative UI improvements.",
+  },
+  {
+    question: "How quickly can a typical project be delivered?",
+    answer:
+      "Smaller websites can ship in days, while multi-page or feature-rich builds depend on scope. I share a clear timeline before starting.",
+  },
+];
+
+const reviews = [
+  {
+    quote:
+      "Karan transformed a rough website brief into a fast, polished experience that feels premium and converts visitors better.",
+    author: "A. Rauf",
+    role: "Travel Agency Owner",
+  },
+  {
+    quote:
+      "Clear communication, smart frontend decisions, and quick iterations. The quality stayed consistent through every revision.",
+    author: "H. Adeel",
+    role: "Project Manager",
+  },
+  {
+    quote:
+      "Our launch timeline was tight, but delivery was smooth and the final UI looked far better than our initial expectations.",
+    author: "S. Noor",
+    role: "Marketing Lead",
+  },
+  {
+    quote:
+      "A dependable developer for modern web builds, especially when brand feel and responsiveness both matter.",
+    author: "M. Bilal",
+    role: "Agency Partner",
+  },
+];
+
 export default function Home() {
-  const skills = {
-    "Front-End": [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "Bootstrap",
-      "jQuery",
-      "React.js",
-    ],
-    "Back-End": ["PHP", "Node.js", "Express.js"],
-    "CMS & Tools": ["WordPress", "Custom Theme Development"],
-    Database: ["MySQL", "MongoDB"],
-    "Currently Learning": ["Next.js", "TypeScript"],
-    "Version Control": ["Git", "GitHub"],
-  };
-
-  const projects = [
-    {
-      name: "Braque Travel",
-      link: "https://braquetravel.co.uk",
-      detail:
-        "Full-featured travel agency website with booking pages, destination galleries, and contact forms.",
-      stack: "HTML, CSS, JavaScript, Bootstrap, jQuery, PHP",
-    },
-    {
-      name: "Hajj & Umrah Agency Platform",
-      detail:
-        "Developed a complete multi-page website for a Hajj & Umrah travel agency with package listings and inquiry system.",
-      stack: "PHP, Bootstrap, responsive layouts, form handling",
-    },
-    {
-      name: "React Web Applications",
-      detail:
-        "Built interactive single-page applications using component-based architecture and state management.",
-      stack: "React.js",
-    },
-    {
-      name: "WordPress Custom Themes",
-      detail:
-        "Designed and built custom WordPress themes that allow non-technical clients to manage content easily.",
-      stack: "WordPress, custom theme development",
-    },
-    {
-      name: "PHP-Based Web Application (MCA System)",
-      detail:
-        "Created a multi-module web app for data management and reporting.",
-      stack: "PHP, MySQL, Bootstrap, jQuery",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
-        <section className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-            Web Developer
-          </p>
-          <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-            Karan
-          </h1>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-            Motivated and detail-oriented Web Developer currently pursuing BS
-            Information Technology at PUCIT, Punjab University. Skilled in
-            building responsive, user-centric web applications using modern
-            front-end and back-end technologies.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm">
-            <a
-              href="mailto:karan@email.com"
-              className="rounded-full border border-slate-300 px-4 py-2 hover:bg-slate-100"
-            >
-              karan@email.com
-            </a>
-            <a
-              href="https://linkedin.com/in/karan-dev"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-slate-300 px-4 py-2 hover:bg-slate-100"
-            >
-              linkedin.com/in/karan-dev
-            </a>
-            <a
-              href="https://braquetravel.co.uk"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-slate-300 px-4 py-2 hover:bg-slate-100"
-            >
-              braquetravel.co.uk
-            </a>
-            <span className="rounded-full border border-slate-300 px-4 py-2">
-              Lahore, Pakistan
-            </span>
-          </div>
-        </section>
-
-        <section className="grid gap-8 lg:grid-cols-3">
-          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 lg:col-span-2">
-            <h2 className="text-2xl font-semibold">Work Experience</h2>
-            <div className="mt-5 space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold">Web Developer | Seabricks</h3>
-                <p className="text-sm text-slate-600">Current - Pakistan</p>
-              </div>
-              <ul className="list-disc space-y-2 pl-5 text-slate-700">
-                <li>
-                  Designed and developed responsive front-end interfaces for
-                  multiple client projects, including travel agency websites.
-                </li>
-                <li>
-                  Built dynamic web applications using PHP with Bootstrap and
-                  jQuery for server-side logic and interactive UI components.
-                </li>
-                <li>
-                  Developed and customized WordPress themes from scratch for
-                  tailored CMS solutions.
-                </li>
-                <li>
-                  Integrated REST APIs and third-party services into web
-                  applications.
-                </li>
-                <li>
-                  Collaborated with cross-functional teams to deliver projects
-                  on time and within scope.
-                </li>
-                <li>
-                  Maintained and improved legacy codebases with a focus on code
-                  quality and performance.
-                </li>
-              </ul>
-            </div>
+    <PageShell
+      eyebrow="Web Developer"
+      title="Modern web experiences with premium UI and practical engineering"
+      intro="Experienced web developer from Lahore building conversion-focused sites, polished product interfaces, and reliable production-ready systems."
+    >
+      <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article className="glass-panel card-glow p-6 sm:p-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--ring)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[var(--soft)]">
+            <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
+            Available for freelance and product work
           </div>
 
-          <aside className="space-y-8">
-            <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <h2 className="text-xl font-semibold">Education</h2>
-              <p className="mt-4 font-medium">BS Information Technology</p>
-              <p className="text-slate-700">
-                Punjab University College of Information Technology (PUCIT)
-              </p>
-              <p className="mt-2 text-sm text-slate-600">
-                Currently Enrolled - Undergraduate
-              </p>
-            </div>
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            I design and ship modern websites with calm structure, clear call-to-actions, and enough motion to feel alive without becoming noisy.
+          </p>
 
-            <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <h2 className="text-xl font-semibold">Languages</h2>
-              <ul className="mt-4 space-y-2 text-slate-700">
-                <li>Urdu - Native</li>
-                <li>English - Professional</li>
-              </ul>
-            </div>
-          </aside>
-        </section>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/projects"
+              className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-black transition hover:brightness-95"
+            >
+              View work
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-chip rounded-full px-5 py-3 text-sm font-medium"
+            >
+              Start a project
+            </Link>
+          </div>
+        </article>
 
-        <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-2xl font-semibold">Projects</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            {projects.map((project) => (
-              <article
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          {stats.map((stat, index) => (
+            <article key={stat.label} className="glass-panel project-card p-5" style={{ animationDelay: `${index * 60}ms` }}>
+              <p className="text-4xl font-semibold tracking-tight">{stat.value}</p>
+              <p className="mt-2 text-sm text-[var(--muted)]">{stat.label}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="glass-panel grid gap-7 p-6 sm:p-8 lg:grid-cols-3">
+        <article className="lg:col-span-2">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 className="text-2xl font-semibold sm:text-3xl">Selected Work</h2>
+            <Link
+              href="/projects"
+              className="inline-chip rounded-full px-4 py-2 text-sm"
+            >
+              View full project list
+            </Link>
+          </div>
+
+          <div className="mt-5 space-y-3">
+            {featuredProjects.slice(0, 3).map((project, index) => (
+              <a
                 key={project.name}
-                className="rounded-xl border border-slate-200 p-4"
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="project-card block rounded-2xl px-1 py-4"
+                style={{ animationDelay: `${index * 90}ms` }}
               >
-                <h3 className="text-lg font-semibold">{project.name}</h3>
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-1 inline-block text-sm text-blue-700 hover:underline"
-                  >
-                    {project.link}
-                  </a>
-                ) : null}
-                <p className="mt-3 text-sm text-slate-700">{project.detail}</p>
-                <p className="mt-2 text-sm font-medium text-slate-600">
-                  Stack: {project.stack}
+                <p className="text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
+                  {project.category}
                 </p>
-              </article>
+                <h3 className="mt-2 text-xl font-semibold">{project.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                  {project.summary}
+                </p>
+                <span className="mt-2 inline-block text-sm text-[var(--accent)]">Visit project</span>
+              </a>
             ))}
           </div>
-        </section>
+        </article>
 
-        <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-2xl font-semibold">Technical Skills</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {Object.entries(skills).map(([category, items]) => (
-              <div key={category} className="rounded-xl border border-slate-200 p-4">
-                <h3 className="font-semibold">{category}</h3>
-                <p className="mt-2 text-sm text-slate-700">{items.join(" • ")}</p>
-              </div>
+        <aside className="rounded-2xl bg-[color:color-mix(in_oklab,var(--surface-elev)_58%,transparent)] p-5">
+          <h2 className="text-2xl font-semibold">Quick Actions</h2>
+          <div className="mt-4 space-y-3 text-sm">
+            <a
+              href="/Karan-CV.txt"
+              download
+              className="inline-chip block rounded-xl px-4 py-3 font-medium"
+            >
+              Download CV
+            </a>
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                className="block rounded-xl px-1 py-3 text-[var(--muted)] transition hover:text-[var(--fg)]"
+              >
+                <span className="block text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
+                  {link.label}
+                </span>
+                <span className="mt-1 block">{link.value}</span>
+              </a>
             ))}
           </div>
-        </section>
+        </aside>
+      </section>
 
-        <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-2xl font-semibold">Strengths</h2>
-          <ul className="mt-5 grid gap-3 text-slate-700 sm:grid-cols-2 lg:grid-cols-3">
-            <li className="rounded-xl border border-slate-200 p-3">
-              Responsive Web Design
-            </li>
-            <li className="rounded-xl border border-slate-200 p-3">
-              Cross-browser Compatibility
-            </li>
-            <li className="rounded-xl border border-slate-200 p-3">
-              Fast Learner & Self-driven
-            </li>
-            <li className="rounded-xl border border-slate-200 p-3">
-              Problem Solving
-            </li>
-            <li className="rounded-xl border border-slate-200 p-3">
-              Team Collaboration
-            </li>
-            <li className="rounded-xl border border-slate-200 p-3">
-              Client-focused Delivery
-            </li>
-          </ul>
-        </section>
+      <section className="glass-panel p-6 sm:p-8">
+        <h2 className="text-2xl font-semibold sm:text-3xl">Why Clients Work With Me</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+          A design-first but practical approach that keeps your website visually strong and implementation-friendly.
+        </p>
+        <div className="mt-6">
+          <AnimatedFeatureGrid features={features} />
+        </div>
+      </section>
 
-        <footer className="pb-4 text-center text-sm text-slate-600">
-          Built with Next.js and ready for Vercel deployment.
-        </footer>
-      </main>
-    </div>
+      <section className="glass-panel p-6 sm:p-8">
+        <h2 className="text-2xl font-semibold sm:text-3xl">Reviews</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+          Feedback from collaborators and clients across travel, marketing, and product-focused projects.
+        </p>
+        <div className="mt-6">
+          <ReviewsSwiper reviews={reviews} />
+        </div>
+      </section>
+
+      <section className="glass-panel p-6 sm:p-8">
+        <h2 className="text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+          Common questions from businesses and teams before starting a new web project.
+        </p>
+        <div className="mt-6">
+          <FaqAccordion items={faqs} />
+        </div>
+      </section>
+
+      <section className="glass-panel p-6 sm:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <h2 className="text-2xl font-semibold sm:text-3xl">Technology Stack</h2>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/experience" className="inline-chip rounded-full px-3 py-1.5 text-sm">
+              Experience
+            </Link>
+            <Link href="/services" className="inline-chip rounded-full px-3 py-1.5 text-sm">
+              Services
+            </Link>
+            <Link href="/contact" className="inline-chip rounded-full px-3 py-1.5 text-sm">
+              Contact
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <span
+              key={skill}
+              className="inline-chip rounded-full px-4 py-2 text-sm text-[var(--muted)]"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+    </PageShell>
   );
 }
