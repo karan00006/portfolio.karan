@@ -22,6 +22,10 @@ export default function SiteHeader() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
   const onToggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
@@ -41,10 +45,10 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-full px-3 py-1 text-sm transition ${
+                className={`rounded-full px-3 py-1 text-sm transition duration-300 ease-out ${
                   isActive
                     ? "inline-chip text-[var(--fg)]"
-                    : "text-[var(--muted)] hover:text-[var(--fg)]"
+                    : "text-[var(--muted)] hover:text-[var(--fg)] hover:scale-105"
                 }`}
               >
                 {link.label}

@@ -80,7 +80,7 @@ export default function PageShell({
             <ul className="mt-3 space-y-2">
               {navLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-[var(--fg)]">
+                  <Link href={item.href} className="transition duration-300 ease-out hover:text-[var(--fg)] hover:translate-x-1 inline-block">
                     {item.label}
                   </Link>
                 </li>
@@ -90,7 +90,7 @@ export default function PageShell({
 
           <div>
             <p className="font-semibold uppercase tracking-[0.12em] text-[var(--soft)]">Contact</p>
-            <a href="mailto:karan@email.com" className="mt-3 block hover:text-[var(--fg)]">
+            <a href="mailto:karan@email.com" className="mt-3 block transition duration-300 ease-out hover:text-[var(--fg)] hover:translate-x-1 inline-block">
               karan@email.com
             </a>
             <p className="mt-2">Lahore, Pakistan</p>

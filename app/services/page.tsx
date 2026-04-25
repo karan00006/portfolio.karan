@@ -30,14 +30,14 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <article
             key={service.title}
-            className="project-card surface rounded-3xl p-6"
+            className="project-card surface rounded-3xl p-6 transition duration-300 ease-out hover:shadow-lg hover:scale-105 hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)] cursor-default"
             style={{ animationDelay: `${index * 70}ms` }}
           >
             <h2 className="text-xl font-semibold">{service.title}</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{service.description}</p>
             <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
               {service.deliverables.map((item) => (
-                <li key={item} className="rounded-xl border border-[var(--ring)] px-3 py-2">
+                <li key={item} className="rounded-xl border border-[var(--ring)] px-3 py-2 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)]">
                   {item}
                 </li>
               ))}
@@ -50,7 +50,7 @@ export default function ServicesPage() {
         <h2 className="text-2xl font-semibold">Common Engagement Models</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
           {packageTiers.map((tier) => (
-            <article key={tier.name} className="rounded-2xl border border-[var(--ring)] p-5">
+            <article key={tier.name} className="rounded-2xl border border-[var(--ring)] p-5 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)] hover:shadow-md hover:scale-105 cursor-default">
               <h3 className="text-lg font-semibold">{tier.name}</h3>
               <p className="mt-2 text-sm text-[var(--muted)]">{tier.description}</p>
               <ul className="mt-3 space-y-2 text-sm text-[var(--muted)]">

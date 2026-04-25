@@ -39,7 +39,7 @@ export default function ExperiencePage() {
             {experiences.map((experience) => (
               <article
                 key={`${experience.company}-${experience.role}`}
-                className="rounded-2xl border border-[var(--ring)] p-5"
+                className="rounded-2xl border border-[var(--ring)] p-5 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_40%,transparent)] hover:shadow-md hover:scale-[1.02]"
               >
                 <p className="text-xs uppercase tracking-[0.12em] text-[var(--soft)]">
                   {experience.period} | {experience.location}
@@ -48,7 +48,7 @@ export default function ExperiencePage() {
                 <p className="text-[var(--muted)]">{experience.company}</p>
                 <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
                   {experience.bullets.map((bullet) => (
-                    <li key={bullet} className="rounded-xl border border-[var(--ring)] px-3 py-2">
+                    <li key={bullet} className="rounded-xl border border-[var(--ring)] px-3 py-2 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)]">
                       {bullet}
                     </li>
                   ))}
@@ -62,7 +62,7 @@ export default function ExperiencePage() {
           <h2 className="text-2xl font-semibold">How I Work</h2>
           <ol className="mt-4 space-y-3">
             {process.map((item, index) => (
-              <li key={item.step} className="rounded-2xl border border-[var(--ring)] p-4">
+              <li key={item.step} className="rounded-2xl border border-[var(--ring)] p-4 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_40%,transparent)] hover:shadow-md hover:scale-105 cursor-default">
                 <p className="text-xs uppercase tracking-[0.12em] text-[var(--soft)]">
                   Step {index + 1}
                 </p>

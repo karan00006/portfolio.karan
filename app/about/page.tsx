@@ -28,7 +28,7 @@ export default function AboutPage() {
     >
       <section className="grid gap-6 lg:grid-cols-3">
         {principles.map((item) => (
-          <article key={item.title} className="surface rounded-2xl p-6">
+          <article key={item.title} className="surface rounded-2xl p-6 transition duration-300 ease-out hover:shadow-lg hover:scale-105 hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)] cursor-default">
             <h2 className="text-xl font-semibold">{item.title}</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
               {item.description}
@@ -40,7 +40,7 @@ export default function AboutPage() {
       <section className="grid gap-6 lg:grid-cols-3">
         <article className="surface rounded-3xl p-6 lg:col-span-2">
           <h2 className="text-2xl font-semibold">Education and Growth</h2>
-          <div className="mt-4 rounded-2xl border border-[var(--ring)] p-5">
+          <div className="mt-4 rounded-2xl border border-[var(--ring)] p-5 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_40%,transparent)] hover:shadow-md">
             <p className="text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
               Degree
             </p>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-[var(--ring)] bg-[var(--surface-elev)] px-4 py-2 text-sm text-[var(--muted)]"
+                className="rounded-full border border-[var(--ring)] bg-[var(--surface-elev)] px-4 py-2 text-sm text-[var(--muted)] transition duration-300 ease-out hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-110 hover:shadow-md cursor-default"
               >
                 {skill}
               </span>
@@ -68,7 +68,7 @@ export default function AboutPage() {
             {testimonials.map((item) => (
               <blockquote
                 key={item.author}
-                className="rounded-2xl border border-[var(--ring)] p-4"
+                className="rounded-2xl border border-[var(--ring)] p-4 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_40%,transparent)] hover:shadow-md"
               >
                 <p className="text-sm leading-6 text-[var(--muted)]">
                   &ldquo;{item.quote}&rdquo;

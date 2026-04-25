@@ -9,25 +9,21 @@ export const navLinks = [
 
 export const stats = [
   { label: "Production Websites", value: "30+" },
-  { label: "Client Projects", value: "18+" },
-  { label: "UI Components Built", value: "120+" },
-  { label: "Years Building", value: "3+" },
+  { label: "UI Components Built", value: "20+" },
+  { label: "Years Building", value: "2+" },
 ];
 
 export const skills = [
-  "Next.js",
   "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js",
-  "WordPress",
+  "Responsive Design",
   "PHP",
-  "Express.js",
+  "WordPress",
+  "Bootstrap",
+  "Tailwind CSS",
   "REST APIs",
-  "MongoDB",
   "MySQL",
   "Performance Optimization",
-  "Responsive Design",
+  "Next.js",
   "SEO Basics",
 ];
 
@@ -41,9 +37,9 @@ export const featuredProjects = [
     highlights: [
       "Designed responsive landing templates for campaigns",
       "Improved clarity of package discovery and inquiry flow",
-      "Built reusable frontend sections for rapid page launches",
+      "Optimized page speed and user experience",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: ["Frontend Architecture", "Bootastrap", "Jquery", , "Jquery UI"],
   },
   {
     name: "Notty Notes (Lovable)",
@@ -115,7 +111,7 @@ export const featuredProjects = [
 export const experiences = [
   {
     role: "Web Developer",
-    company: "Seabricks",
+    company: "Cbrix",
     period: "Current",
     location: "Pakistan",
     bullets: [
@@ -134,7 +130,7 @@ export const experiences = [
     bullets: [
       "Delivered custom marketing and business websites for local and international clients.",
       "Translated rough requirements into polished frontend experiences.",
-      "Handled deployment and iterative optimization after launch.",
+      "Optimized sites for speed and user experience.",
     ],
   },
 ];
@@ -147,7 +143,6 @@ export const services = [
     deliverables: [
       "Custom design direction",
       "Responsive page system",
-      "Core SEO setup",
     ],
   },
   {

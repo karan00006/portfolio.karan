@@ -1,79 +1,61 @@
 "use client";
 
-import { useLayoutEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function ShellMotion() {
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.animation = "slideDown 0.7s ease-out forwards";
+    }
 
-    const animateIfFound = (selector: string, config: gsap.TweenVars) => {
-      const targets = Array.from(document.querySelectorAll(selector));
-
-      if (targets.length === 0) {
-        return;
-      }
-
-      gsap.from(targets, config);
-    };
-
-    animateIfFound("header", {
-      y: -24,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
+    const sections = Array.from(document.querySelectorAll("main > section"));
+    sections.forEach((section, idx) => {
+      (section as HTMLElement).style.animation = `fadeInUp 0.7s ease-out ${idx * 0.1}s forwards`;
     });
 
-    animateIfFound("main > section", {
-      y: 28,
-      opacity: 0,
-      duration: 0.9,
-      ease: "power3.out",
-      stagger: 0.12,
-      scrollTrigger: {
-        trigger: "main",
-        start: "top 85%",
-      },
+    const workRows = Array.from(document.querySelectorAll(".work-row"));
+    workRows.forEach((row, idx) => {
+      (row as HTMLElement).style.animation = `fadeInUp 0.6s ease-out ${idx * 0.08}s forwards`;
     });
 
-    animateIfFound(".project-card, .work-row", {
-      y: 20,
-      opacity: 0,
-      duration: 0.65,
-      ease: "power2.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: "main",
-        start: "top 80%",
-      },
+    const chips = Array.from(document.querySelectorAll(".inline-chip"));
+    chips.forEach((chip, idx) => {
+      (chip as HTMLElement).style.animation = `scaleIn 0.5s ease-out ${idx * 0.05}s forwards`;
     });
 
-    animateIfFound(".inline-chip", {
-      scale: 0.96,
-      opacity: 0,
-      duration: 0.45,
-      ease: "back.out(1.4)",
-      stagger: 0.02,
-      scrollTrigger: {
-        trigger: "main",
-        start: "top 80%",
-      },
-    });
-
-    animateIfFound("footer", {
-      y: 18,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "footer",
-        start: "top 95%",
-      },
-    });
+    const footer = document.querySelector("footer");
+    if (footer) {
+      footer.style.animation = "slideUp 0.7s ease-out forwards";
+    }
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      [header, ...sections, ...workRows, ...chips, footer].forEach((el) => {
+        if (el) (el as HTMLElement).style.animation = "";
+      });
     };
   }, []);
 

@@ -46,7 +46,7 @@ export default function ContactPage() {
             </label>
             <button
               type="button"
-              className="rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-black md:col-span-2 md:w-fit"
+              className="rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-black md:col-span-2 md:w-fit transition duration-300 ease-out hover:scale-105 hover:shadow-lg"
             >
               Send Inquiry
             </button>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className="block rounded-xl border border-[var(--ring)] px-4 py-3"
+                className="block rounded-xl border border-[var(--ring)] px-4 py-3 transition duration-300 ease-out hover:border-[var(--accent)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)] hover:shadow-md hover:scale-105"
               >
                 <span className="text-xs uppercase tracking-[0.12em] text-[var(--soft)]">
                   {link.label}
@@ -73,7 +73,7 @@ export default function ContactPage() {
             <a
               href="/Karan-CV.txt"
               download
-              className="block rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-black"
+              className="block rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-black transition duration-300 ease-out hover:scale-105 hover:shadow-lg"
             >
               Download CV
             </a>

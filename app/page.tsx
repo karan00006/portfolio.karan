@@ -99,13 +99,16 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-black transition hover:brightness-95"
+              className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-black transition duration-300 ease-out hover:scale-105 hover:shadow-lg"
+              style={{
+                boxShadow: "0 0 20px rgba(102, 242, 189, 0.25)",
+              }}
             >
               View work
             </Link>
             <Link
               href="/contact"
-              className="inline-chip rounded-full px-5 py-3 text-sm font-medium"
+              className="inline-chip rounded-full px-5 py-3 text-sm font-medium transition duration-300 ease-out hover:scale-105 hover:shadow-md hover:text-[var(--accent)]"
             >
               Start a project
             </Link>
@@ -114,8 +117,8 @@ export default function Home() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
           {stats.map((stat, index) => (
-            <article key={stat.label} className="glass-panel project-card p-5" style={{ animationDelay: `${index * 60}ms` }}>
-              <p className="text-4xl font-semibold tracking-tight">{stat.value}</p>
+            <article key={stat.label} className="glass-panel project-card p-5 transition duration-300 ease-out hover:shadow-lg hover:scale-105 hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_50%,transparent)] cursor-default" style={{ animationDelay: `${index * 60}ms` }}>
+              <p className="text-4xl font-semibold tracking-tight transition duration-300 ease-out group-hover:text-[var(--accent)]">{stat.value}</p>
               <p className="mt-2 text-sm text-[var(--muted)]">{stat.label}</p>
             </article>
           ))}
@@ -128,7 +131,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold sm:text-3xl">Selected Work</h2>
             <Link
               href="/projects"
-              className="inline-chip rounded-full px-4 py-2 text-sm"
+              className="inline-chip rounded-full px-4 py-2 text-sm transition duration-300 ease-out hover:scale-105 hover:shadow-md hover:text-[var(--accent)]"
             >
               View full project list
             </Link>
@@ -141,7 +144,7 @@ export default function Home() {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className="project-card modern-sheen block rounded-2xl border border-transparent px-4 py-5 transition duration-300 hover:border-[var(--ring)]"
+                className="project-card modern-sheen block rounded-2xl border border-transparent px-4 py-5 transition duration-300 ease-out hover:border-[var(--ring)] hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_40%,transparent)] hover:shadow-md"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
                 <p className="text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
@@ -158,9 +161,9 @@ export default function Home() {
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">
                   {project.summary}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--fg)] transition group-hover:translate-x-1">
+                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--fg)] transition duration-300 ease-out group-hover:translate-x-2 group-hover:text-[var(--accent)]">
                   <span>Visit project</span>
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true" className="transition duration-300 ease-out group-hover:translate-x-1">→</span>
                 </span>
               </a>
             ))}
@@ -173,7 +176,7 @@ export default function Home() {
             <a
               href="/Karan-CV.txt"
               download
-              className="inline-chip block rounded-xl px-4 py-3 font-medium"
+              className="inline-chip block rounded-xl px-4 py-3 font-medium transition duration-300 ease-out hover:scale-105 hover:shadow-md hover:text-[var(--accent)]"
             >
               Download CV
             </a>
@@ -183,9 +186,9 @@ export default function Home() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className="block rounded-xl px-1 py-3 text-[var(--muted)] transition duration-200 hover:translate-x-1 hover:text-[var(--fg)]"
+                className="block rounded-xl px-1 py-3 text-[var(--muted)] transition duration-300 ease-out hover:translate-x-2 hover:text-[var(--fg)] hover:scale-105"
               >
-                <span className="block text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
+                <span className="block text-xs uppercase tracking-[0.15em] text-[var(--soft)] transition duration-300 ease-out group-hover:text-[var(--accent)]">
                   {link.label}
                 </span>
                 <span className="mt-1 block">{link.value}</span>
