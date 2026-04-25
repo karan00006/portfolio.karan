@@ -37,14 +37,14 @@ export default function ProjectsPage() {
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="grid gap-4 rounded-2xl px-4 py-2 transition duration-300 hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_55%,transparent)] lg:grid-cols-[1.4fr_1.2fr_0.7fr] lg:items-start"
+              className="grid gap-4 rounded-2xl px-4 py-4 transition duration-300 hover:bg-[color:color-mix(in_oklab,var(--surface-elev)_60%,transparent)] lg:grid-cols-[1.4fr_1.2fr_0.7fr] lg:items-start"
             >
               <div className="flex gap-4">
-                <div className="text-lg font-semibold text-[var(--soft)]">
+                <div className="text-lg font-semibold text-[var(--soft)] transition group-hover:text-[var(--accent)]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold transition group-hover:translate-x-1">
+                  <h2 className="text-2xl font-semibold transition duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)]">
                     {project.name}
                   </h2>
                   <p className="mt-1 text-sm text-[var(--muted)]">
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
               </div>
 
               <div className="lg:text-right">
-                <div className="inline-flex items-center gap-2 text-sm font-medium text-[var(--fg)] transition group-hover:translate-x-1">
+                <div className="inline-flex items-center gap-2 text-sm font-medium text-[var(--fg)] transition duration-300 group-hover:translate-x-1">
                   <span>Visit live site</span>
                   <span aria-hidden="true">→</span>
                 </div>

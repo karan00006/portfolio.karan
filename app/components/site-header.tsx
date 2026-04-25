@@ -27,7 +27,7 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="hairline sticky top-0 z-50 w-full bg-[color:color-mix(in_oklab,var(--bg)_92%,transparent)] py-4 backdrop-blur">
+    <header className="hairline fixed inset-x-0 top-0 z-50 w-full bg-[color:color-mix(in_oklab,var(--bg)_92%,transparent)] py-4 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-base font-semibold tracking-[0.08em] sm:text-lg">
           Karan . Portfolio

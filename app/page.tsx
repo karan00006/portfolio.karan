@@ -141,23 +141,33 @@ export default function Home() {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className="project-card block rounded-2xl px-1 py-4"
+                className="project-card modern-sheen block rounded-2xl border border-transparent px-4 py-5 transition duration-300 hover:border-[var(--ring)]"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
                 <p className="text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
                   {project.category}
                 </p>
-                <h3 className="mt-2 text-xl font-semibold">{project.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <h3 className="text-xl font-semibold transition group-hover:translate-x-1">
+                    {project.name}
+                  </h3>
+                  <span className="text-xs uppercase tracking-[0.18em] text-[var(--soft)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">
                   {project.summary}
                 </p>
-                <span className="mt-2 inline-block text-sm text-[var(--accent)]">Visit project</span>
+                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--fg)] transition group-hover:translate-x-1">
+                  <span>Visit project</span>
+                  <span aria-hidden="true">→</span>
+                </span>
               </a>
             ))}
           </div>
         </article>
 
-        <aside className="rounded-2xl bg-[color:color-mix(in_oklab,var(--surface-elev)_58%,transparent)] p-5">
+        <aside className="glass-panel p-5">
           <h2 className="text-2xl font-semibold">Quick Actions</h2>
           <div className="mt-4 space-y-3 text-sm">
             <a
@@ -173,7 +183,7 @@ export default function Home() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className="block rounded-xl px-1 py-3 text-[var(--muted)] transition hover:text-[var(--fg)]"
+                className="block rounded-xl px-1 py-3 text-[var(--muted)] transition duration-200 hover:translate-x-1 hover:text-[var(--fg)]"
               >
                 <span className="block text-xs uppercase tracking-[0.15em] text-[var(--soft)]">
                   {link.label}
